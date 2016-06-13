@@ -39,6 +39,6 @@ class IndexController extends Controller
     {
         $comm = new Comment();
         $comm->addComment();
-        header("Location: http://uttc/index/show/".$_POST['id']);
+        header("Location: http://".self::DOMAIN."/index/show/".$_POST['id']);
     }
 }

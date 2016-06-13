@@ -21,7 +21,7 @@
         <input type="text" name="tags" class="form-control" id="" placeholder="Tags Post">
     </div>
     <div class="form-group">
-        <label for="exampleInputFile">Add Image</label>
+        <label for="exampleInputFile">Add Image (Индикатор загрузки я к сожалению не реализовал) </label>
         <input type="file" id="" name="images[]">
         <input type="file" id="" name="images[]">
         <input type="file" id="" name="images[]">

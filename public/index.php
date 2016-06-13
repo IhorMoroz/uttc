@@ -1,7 +1,5 @@
 <?php
-
-use core\controllers\IndexController;
-
-require_once '../autoload.php';
+//error_reporting(E_ALL);
+require_once __DIR__.'/../autoload.php';
 
 $obj = new \core\helpers\Routing();

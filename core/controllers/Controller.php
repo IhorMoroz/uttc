@@ -8,6 +8,8 @@ use core\models\Image;
 
 abstract class Controller
 {
+    const DOMAIN = 'uttc';
+
     static protected function fillsPostImg($posts)
     {
         foreach($posts as $post)

@@ -4,14 +4,14 @@ namespace core\helpers;
 
 class Routing
 {
-    private $controller = "core\\controllers\\";
+    private $controller = "\\core\\controllers\\";
 
     public function __construct()
     {
         $url = explode('/', rtrim(strtolower($_GET['url']), '/'));
         $this->controller .= ($url[0] == "") ? "IndexController" : ucfirst($url[0])."Controller";
-        $action = (!$url[1]) ? "indexAction" : lcfirst($url[1])."Action";
-        $param = ($url[2]) ? $this->prepareParam($url) : null ;
+        $action = (empty($url[1])) ? "indexAction" : lcfirst($url[1])."Action";
+        $param = (!empty($url[2])) ? $this->prepareParam($url) : null ;
         $obj = new $this->controller;
         echo $obj->$action($param);
     }

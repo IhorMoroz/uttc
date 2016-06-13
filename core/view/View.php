@@ -25,7 +25,7 @@ class View
     {
         ob_start();
         foreach($this->data as $varname => $value) $$varname = $value;
-        include __DIR__ . '\\templates\\' . $template;
+        include __DIR__ . '/templates/' . $template;
         $content = ob_get_contents();
         ob_get_clean();
         return $content;

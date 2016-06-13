@@ -35,7 +35,7 @@ class DB
     private function __construct()
     {
         try{
-            $config = parse_ini_file("..\\config.ini", true);
+            $config = parse_ini_file(__DIR__."/../../config.ini", true);
             $this->_DB = new \PDO('mysql:host='.$config['database']['host'].';dbname='.$config['database']['name'], $config['database']['user'], $config['database']['password']);
         }catch (\PDOException $e){
             throw new DataBase($e->getMessage());

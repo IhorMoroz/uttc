@@ -54,20 +54,20 @@ class AdminController extends Controller
     {
         $post = new Post();
         $post->dropPost($id);
-        header("Location: http://uttc/admin/");
+        header("Location: http://".self::DOMAIN."/admin/");
     }
 
     private function add()
     {
         $post = new Post();
         $post->addPost();
-        header("Location: http://uttc/admin/");
+        header("Location: http://".self::DOMAIN."/admin/");
     }
 
     private function edit()
     {
         $post = new Post();
         $post->editPost();
-        header("Location: http://uttc/admin/");
+        header("Location: http://".self::DOMAIN."/admin/");
     }
 }
