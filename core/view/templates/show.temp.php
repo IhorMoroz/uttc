@@ -8,6 +8,7 @@
     <p><?=$post[0]->content;?></p>
 </div>
 <div class="box-comments">
+    <?php if(isset($post[0]->comments) > 0) : ?>
     <h3>Comments</h3>
     <?php foreach($post[0]->comments as $comment) : ?>
         <div class="comment">
@@ -15,7 +16,7 @@
             <p class="text"><?=$comment->content;?></p>
             <hr/>
         </div>
-    <?php endforeach; ?>
+    <?php endforeach; endif; ?>
 </div>
 <form action="index/" class="form-comment" method="POST">
     <h3>Add Comment</h3>

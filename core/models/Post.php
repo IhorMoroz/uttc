@@ -101,13 +101,13 @@ class Post extends Model
     {
         switch($name){
             case 'images':
-                return !empty($this->key_img);
+                return count($this->images);
                 break;
             case 'comments':
-                return !empty($this->id);
+                return count($this->comments);
                 break;
             case 'status_word':
-                return !empty($this->status);
+                return count($this->status_word);
                 break;
             default:
                 return false;
