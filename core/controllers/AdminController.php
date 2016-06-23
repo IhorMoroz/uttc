@@ -25,8 +25,6 @@ class AdminController extends Controller
     {
         $view = new View();
         $view->posts = Post::getPosts();
-        $view->posts = self::fillsPostImg($view->posts);
-        $view->posts = self::fillsPostComments($view->posts);
         $view->content = $view->render('a.post.temp.php');
         $view->display('a.index.temp.php');
     }
@@ -44,7 +42,6 @@ class AdminController extends Controller
         $id = (int)$id[0];
         $view = new View();
         $view->post = Post::getPost($id);
-        $view->post = self::fillsPostImg($view->post);
         $view->status = Status::getAll();
         $view->content = $view->render('a.edit.temp.php');
         $view->display('a.index.temp.php');

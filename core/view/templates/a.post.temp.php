@@ -13,20 +13,7 @@
     <tr>
         <td><?=$i;?></td>
         <td><?=$post->title;?></td>
-        <td>
-            <?php
-                switch($post->status){
-                    case 2 :
-                        echo 'Open';
-                        break;
-                    case 3 :
-                        echo 'Closed';
-                        break;
-                    default :
-                        echo 'New';
-                }
-            ?>
-        </td>
+        <td><?=$post->status_word->status;?></td>
         <td><?=count($post->comments);?></td>
         <td><?=count($post->images);?></td>
         <td><a href="/admin/edit/<?=$post->id;?>"><i class="glyphicon glyphicon-pencil"></i></a></td>

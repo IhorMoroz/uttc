@@ -79,4 +79,38 @@ class Post extends Model
         $post = Post::getOne($id);
         $post->delete();
     }
+
+    public function __get($name)
+    {
+        switch($name){
+            case 'images':
+                return Image::getImagesByKey($this->key_img);
+                break;
+            case 'comments':
+                return Comment::getCommentsByKey($this->id);
+                break;
+            case 'status_word':
+                return Status::getStatusByKey($this->status);
+                break;
+            default:
+                return null;
+        }
+    }
+
+    public function __isset($name)
+    {
+        switch($name){
+            case 'images':
+                return !empty($this->key_img);
+                break;
+            case 'comments':
+                return !empty($this->id);
+                break;
+            case 'status_word':
+                return !empty($this->status);
+                break;
+            default:
+                return false;
+        }
+    }
 }

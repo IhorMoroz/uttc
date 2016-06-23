@@ -19,7 +19,6 @@ class IndexController extends Controller
     {
         $view = new View();
         $view->posts = Post::getPosts();
-        $view->posts = self::fillsPostImg($view->posts);
         $view->content = $view->render('home.temp.php');
         $view->display('index.temp.php');
     }
@@ -29,8 +28,6 @@ class IndexController extends Controller
         $id = (int)$id[0];
         $view = new View();
         $view->post = Post::getPost($id);
-        $view->post = self::fillsPostImg($view->post);
-        $view->post = self::fillsPostComments($view->post);
         $view->content = $view->render('show.temp.php');
         $view->display('index.temp.php');
     }
